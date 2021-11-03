@@ -1,3 +1,3 @@
 # OpenSourceCS
-Progress towards ForrestKnight's Open Course CS
-course load can be found here: https://github.com/ForrestKnight/open-source-cs
+Progress towards ForrestKnight's Open Course CS.
+Course load can be found here: https://github.com/ForrestKnight/open-source-cs
