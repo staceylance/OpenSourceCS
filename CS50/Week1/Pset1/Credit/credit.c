@@ -35,10 +35,11 @@ int main(void)
     int weighted_sum = 0;
     for (int j = 0; j < card_length; j++)
     {
-        if ((j % 2 == 1)){
+        if ((j % 2 == 1))
+        {
         //Tackles odd numbered entries, Adds individual digits for double digit numbers
             int odd_count_increment = (card_array[j]) * 2;
-            while (odd_count_increment>=10)
+            while (odd_count_increment >= 10)
             {
                 odd_count_increment = 1 + (odd_count_increment % 10);
             }
@@ -56,7 +57,36 @@ int main(void)
 
     if ((weighted_sum % 10) == 0)
     {
-    // Tests for start with 4 -> Visa
+        //Switch case for card issuer
+        switch ((card_array[card_length - 1]))
+        {
+            case 4:
+                printf("VISA\n");
+                break;
+            case 5:
+                if (((card_array[card_length - 2]) < 6) && ((card_array[card_length - 2]) > 0))
+                {
+                    printf("MASTERCARD\n");
+                }
+                else
+                {
+                    printf("INVALID\n");
+                }
+                break;
+            case 3:
+                if (((card_array[card_length - 2]) == 4) || ((card_array[card_length - 2]) == 7))
+                {
+                    printf("AMEX\n");
+                }
+                else
+                {
+                    printf("INVALID\n");
+                }
+                break;
+            default:
+                printf("INVALID\n");
+        }
+    /* Tests for start with 4 -> Visa (original)
         if ((card_array[card_length - 1]) == 4)
         {
             printf("VISA\n");
@@ -80,6 +110,7 @@ int main(void)
         {
             printf("INVALID\n");
         }
+    */
     }
     else if ((weighted_sum % 10) != 0)
     {
